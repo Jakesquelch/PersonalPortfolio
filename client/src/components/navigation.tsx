@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Sun, Moon, Menu, X, Download } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { Button } from "@/components/ui/button";
 
@@ -49,17 +49,7 @@ export function Navigation() {
     setIsOpen(false);
   };
 
-  const handleResumeDownload = () => {
-    // In a real implementation, this would download an actual PDF file
-    // For now, we'll just show a console message
-    console.log("Resume download initiated");
-    
-    // Create a mock download link
-    const link = document.createElement('a');
-    link.href = '#'; // In production, this would be the actual resume file URL
-    link.download = 'Jake_Squelch_Resume.pdf';
-    // link.click(); // Uncomment when you have an actual resume file
-  };
+
 
   return (
     <motion.nav
@@ -114,18 +104,11 @@ export function Navigation() {
               {theme === "dark" ? (
                 <Sun className="h-5 w-5 text-yellow-400" />
               ) : (
-                <Moon className="h-5 w-5 text-blue-400" />
+                <Moon className="h-5 w-5 text-blue-600" />
               )}
             </Button>
             
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={handleResumeDownload}
-              className="p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
-            >
-              <Download className="h-5 w-5 hover:text-electric transition-colors duration-300" />
-            </Button>
+
 
             <Button
               variant="ghost"

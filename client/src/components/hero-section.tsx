@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SOCIAL_LINKS } from "@/lib/constants";
+import profileImage from "@assets/phonto.jpg";
 
 export function HeroSection() {
   const handleNavClick = (href: string) => {
@@ -43,7 +44,7 @@ export function HeroSection() {
           >
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
+                src={profileImage}
                 alt="Jake Squelch Professional Photo"
                 className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-electric/30 animate-glow"
               />
