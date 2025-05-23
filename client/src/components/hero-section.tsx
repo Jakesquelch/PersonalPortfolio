@@ -102,9 +102,9 @@ export function HeroSection() {
           >
             <Button
               onClick={() => handleNavClick("projects")}
-              className="group px-8 py-4 bg-gradient-to-r from-electric to-purple rounded-xl font-semibold hover:shadow-2xl hover:shadow-electric/25 transition-all duration-300 transform hover:scale-105"
+              className="group px-8 py-4 bg-gradient-to-r from-electric to-purple text-white dark:text-white rounded-xl font-semibold hover:shadow-2xl hover:shadow-electric/25 transition-all duration-300 transform hover:scale-105"
             >
-              <span className="flex items-center">
+              <span className="flex items-center text-white dark:text-white">
                 View My Work
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
               </span>
@@ -112,7 +112,7 @@ export function HeroSection() {
             <Button
               variant="outline"
               onClick={() => handleNavClick("contact")}
-              className="px-8 py-4 border-2 border-electric/30 rounded-xl font-semibold hover:bg-electric/10 hover:border-electric transition-all duration-300"
+              className="px-8 py-4 border-2 border-electric/30 text-white dark:text-white bg-transparent hover:bg-electric/10 hover:border-electric transition-all duration-300"
             >
               Get In Touch
             </Button>

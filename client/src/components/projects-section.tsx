@@ -1,25 +1,12 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
-import { useState } from "react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { PROJECTS, SOCIAL_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-const filterOptions = [
-  { value: "all", label: "All Projects" },
-  { value: "backend", label: "Backend" },
-  { value: "fullstack", label: "Full Stack" },
-  { value: "api", label: "API" },
-];
-
 export function ProjectsSection() {
-  const [activeFilter, setActiveFilter] = useState("all");
   const { ref, hasIntersected } = useIntersectionObserver({ threshold: 0.1 });
-
-  const filteredProjects = PROJECTS.filter(
-    project => activeFilter === "all" || project.category === activeFilter
-  );
 
   return (
     <section id="projects" ref={ref} className="py-20 bg-gradient-to-b from-dark to-darker dark:from-dark dark:to-darker">
@@ -30,7 +17,7 @@ export function ProjectsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-electric to-purple bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white dark:text-white">
             Featured Projects
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
@@ -38,31 +25,10 @@ export function ProjectsSection() {
           </p>
         </motion.div>
 
-        {/* Project Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={hasIntersected ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
-        >
-          {filterOptions.map((option) => (
-            <Button
-              key={option.value}
-              onClick={() => setActiveFilter(option.value)}
-              variant={activeFilter === option.value ? "default" : "outline"}
-              className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                activeFilter === option.value
-                  ? "bg-electric text-white"
-                  : "bg-white/10 text-gray-300 hover:bg-white/20"
-              }`}
-            >
-              {option.label}
-            </Button>
-          ))}
-        </motion.div>
+
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {PROJECTS.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 50 }}
@@ -82,7 +48,7 @@ export function ProjectsSection() {
 
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                  <h3 className="text-xl font-semibold text-white dark:text-white">{project.title}</h3>
                   <div className="flex space-x-2">
                     <Button
                       variant="ghost"
