@@ -13,15 +13,19 @@ export function HeroSection() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-darker dark:bg-darker">
+    <section
+      id="home"
+      className="pt-20 relative overflow-hidden bg-darker dark:bg-darker"
+    >
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
-        <div 
+        <div
           className="absolute inset-0 opacity-30"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')",
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')",
             backgroundSize: "cover",
-            backgroundPosition: "center"
+            backgroundPosition: "center",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-electric/20 via-purple/20 to-pink/20" />
@@ -59,7 +63,9 @@ export function HeroSection() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6"
           >
-            <span className="block text-white dark:text-white">Hi, I'm</span>
+            <span className="block text-white dark:text-white">
+              Hi, I'm Jake Squelch
+            </span>
             <motion.span
               className="block bg-gradient-to-r from-electric via-purple to-pink bg-clip-text text-transparent animate-float"
               animate={{
@@ -81,7 +87,8 @@ export function HeroSection() {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Computer Science Student & Aspiring Software Engineer at Aston University
+            Computer Science Student & Aspiring Software Engineer at Aston
+            University
           </motion.p>
 
           <motion.p
@@ -90,7 +97,9 @@ export function HeroSection() {
             transition={{ delay: 0.9, duration: 0.8 }}
             className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto"
           >
-            Passionate about creating innovative solutions with 6 months of backend development experience and a drive to build impactful software.
+            Passionate about creating innovative solutions with 6 months of
+            backend development experience and a drive to build impactful
+            software.
           </motion.p>
 
           {/* CTA Buttons */}
